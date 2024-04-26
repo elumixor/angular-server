@@ -1,0 +1,37 @@
+{
+  "name": "@elumixor/angular-server",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "test": "bun test",
+    "lint": "bun run eslint"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/chalk": "^2.2.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@typescript-eslint/eslint-plugin": "^7.7.1",
+    "eslint": "^9.1.1",
+    "eslint-plugin-import": "^2.29.1",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@angular/common": "^17.3.6",
+    "@angular/ssr": "^17.3.6",
+    "chalk": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "reflect-metadata": "^0.2.2"
+  }
+}
