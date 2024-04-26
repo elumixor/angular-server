@@ -4,6 +4,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elumixor/angular-server.git"
+  },
   "scripts": {
     "build": "tsup",
     "test": "bun test",
