@@ -1,12 +1,12 @@
 {
-  "name": "@elumixor/angular-server",
+  "name": "@elumixor/angular-util",
   "version": "0.1.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elumixor/angular-server.git"
+    "url": "git+https://github.com/elumixor/angular-util.git"
   },
   "scripts": {
     "build": "tsup",
