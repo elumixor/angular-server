@@ -11,7 +11,7 @@
   "scripts": {
     "build": "tsup",
     "test": "bun test",
-    "lint": "bun run eslint",
+    "lint": "bun run eslint --ext .ts .",
     "release:patch": "npm version patch -m \"Release v%s\" && git push --tags",
     "release:minor": "npm version minor -m \"Release v%s\" && git push --tags",
     "release:major": "npm version major -m \"Release v%s\" && git push --tags"
@@ -24,9 +24,6 @@
     "@types/chalk": "^2.2.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
-    "@typescript-eslint/eslint-plugin": "^7.7.1",
-    "eslint": "^9.1.1",
-    "eslint-plugin-import": "^2.29.1",
     "tsup": "^8.0.2",
     "typescript": "^5.4.5"
   },
@@ -35,7 +32,9 @@
   },
   "dependencies": {
     "@angular/common": "^17.3.6",
+    "@angular/core": "^17.3.6",
     "@angular/ssr": "^17.3.6",
+    "@elumixor/eslint": "^0.1.1",
     "chalk": "^5.3.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",

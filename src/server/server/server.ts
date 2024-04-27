@@ -24,8 +24,8 @@ export class Server {
   }
 
   start() {
-    // eslint-disable-next-line no-console
     this.server.listen(this.port, () =>
+      // eslint-disable-next-line no-console
       console.log(chalk.green(`Listening on http://${this.ip}:${this.port}`))
     );
   }
@@ -61,7 +61,7 @@ export class Server {
                   String(value)
                 );
 
-              if (process.env["NG_DEV"]) {
+              if (process.env.NG_DEV) {
                 // eslint-disable-next-line no-console
                 console.log(chalk.cyan(`${date}: API request: ${substituted}`));
                 // eslint-disable-next-line no-console
@@ -83,7 +83,7 @@ export class Server {
 
               const result = (await handler(p)) ?? {};
 
-              if (process.env["NG_DEV"]) {
+              if (process.env.NG_DEV) {
                 // eslint-disable-next-line no-console
                 console.log(
                   chalk.magenta(`${date}: API response ${substituted}`)

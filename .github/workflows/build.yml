@@ -22,8 +22,18 @@ jobs:
       - run: bun install
       - run: bun test
 
+  lint:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v1
+      - run: bun install
+      - run: bun lint
+
   publish:
-    needs: [build, test]
+    needs: [build, test, lint]
     runs-on: ubuntu-latest
 
     # Run on any tag

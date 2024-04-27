@@ -4,7 +4,7 @@ import { join, resolve } from "node:path";
 import type { Server } from "./server";
 
 export type BootstrapLoader = () => Promise<{
-  default: Type<{}> | (() => Promise<unknown>);
+  default: Type<object> | (() => Promise<unknown>);
 }>;
 
 export async function includeAngular({
@@ -39,7 +39,7 @@ export async function includeAngular({
     })
   );
 
-  const bootstrap = (await bootstrapLoader?.())?.default as Type<{}>;
+  const bootstrap = (await bootstrapLoader?.())?.default as Type<object>;
 
   // All regular routes use the Angular engine
   server.server.get("*", (req, res, next) => {
@@ -54,6 +54,6 @@ export async function includeAngular({
         providers: [{ provide: APP_BASE_HREF, useValue: baseUrl }],
       })
       .then((html) => res.send(html))
-      .catch((err) => next(err));
+      .catch((err: unknown) => next(err));
   });
 }

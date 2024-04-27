@@ -1,37 +1,9 @@
 {
-  "root": true,
-  "ignorePatterns": ["projects/**/*"],
-  "overrides": [
-    {
-      "files": ["*.ts"],
-      "parserOptions": {
-        "project": ["tsconfig.app.json"]
-      },
-      "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/strict-type-checked",
-        "plugin:@typescript-eslint/stylistic-type-checked"
-      ],
-      "plugins": ["@typescript-eslint", "import", "prefer-arrow"],
-      "rules": {
-        "@typescript-eslint/no-confusing-void-expression": [
-          "error",
-          {
-            "ignoreArrowShorthand": true,
-            "ignoreVoidOperator": true
-          }
-        ],
-        "@typescript-eslint/no-non-null-assertion": "off",
-        "@typescript-eslint/no-import-type-side-effects": "error",
-        "@typescript-eslint/unified-signatures": "off",
-        "@typescript-eslint/no-unused-vars": [
-          "error",
-          { "varsIgnorePattern": "^_" }
-        ],
-        "object-shorthand": "error",
-        "no-console": "error",
-        "no-useless-rename": "error"
-      }
+  "extends": ["./node_modules/@elumixor/eslint"],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "modules": true
     }
-  ]
+  }
 }

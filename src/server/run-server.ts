@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import type { BootstrapLoader } from "./include-angular";
 import { Server } from "./server";
-import { wslIp } from "./utils/wsl-ip";
+import { wslIp } from "../util/wsl-ip";
 
 export async function run(
   handler: object,
@@ -30,7 +30,7 @@ export async function run(
   const angular = options?.angular;
   const devEnvFlag = options?.devEnvFlag ?? "NG_DEV";
   const devMode = !!process.env[devEnvFlag];
-  const devPort = options?.devPort ?? process.env["PORT"] ?? 4000;
+  const devPort = options?.devPort ?? process.env.PORT ?? 4000;
   const prodPort = options?.prodPort ?? devPort;
 
   // Create our server
