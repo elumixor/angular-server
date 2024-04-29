@@ -1,4 +1,4 @@
-# angular-util
+# angular-server
 
 To install dependencies:
 

@@ -1,5 +1,5 @@
 {
-  "name": "@elumixor/angular-util",
+  "name": "@elumixor/angular-server",
   "version": "0.2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
