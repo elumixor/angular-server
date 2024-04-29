@@ -12,3 +12,8 @@ test("wsl ip should work", () => {
     expect(num).toBeLessThanOrEqual(255);
   }
 });
+
+test("wsl ip should be trimmed", () => {
+  const ip = wslIp();
+  expect(ip).toBe(ip.trim());
+});
