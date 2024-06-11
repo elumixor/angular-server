@@ -1,9 +1,10 @@
+import type { JSONLike } from "@elumixor/frontils";
+import chalk from "chalk";
 import cors from "cors";
 import express from "express";
 import "reflect-metadata";
 import type { RequestMetadata } from "./request-metadata";
 import { requestSymbol } from "./request-symbol";
-import chalk from "chalk";
 
 export class Server {
   readonly port;
@@ -72,16 +73,13 @@ export class Server {
 
               const handler = (
                 target[propertyKey as keyof typeof target] as (
+                  body: JSONLike,
                   params: Record<string, unknown>
                 ) => PromiseLike<unknown>
               ).bind(target);
 
-              const p = { ...req.body, ...req.params } as Record<
-                string,
-                unknown
-              >;
-
-              const result = (await handler(p)) ?? {};
+              const result =
+                (await handler(req.body as JSONLike, req.params)) ?? {};
 
               if (process.env.NG_DEV) {
                 // eslint-disable-next-line no-console
